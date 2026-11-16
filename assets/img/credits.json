@@ -1,0 +1,50 @@
+{
+ "note": "Credits for the photographs in this folder: photos.mjs credits prints the footer block for the ones the pages use.",
+ "photos": [
+  {
+   "file": "photo-f102866603.jpg",
+   "files": [
+    "photo-f102866603-500.jpg",
+    "photo-f102866603-960.jpg",
+    "photo-f102866603.jpg"
+   ],
+   "id": "f102866603",
+   "alt": "Dental Panorama X-ray",
+   "by": "Farhang Amini",
+   "licence": "CC BY 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Dental_Panorama_X-ray.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f181467228.jpg",
+   "files": [
+    "photo-f181467228-500.jpg",
+    "photo-f181467228-960.jpg",
+    "photo-f181467228.jpg"
+   ],
+   "id": "f181467228",
+   "alt": "Pano-GH21101912",
+   "by": "Fastsmiles",
+   "licence": "CC0",
+   "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://commons.wikimedia.org/wiki/File:Pano-GH21101912.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f31477217.jpg",
+   "files": [
+    "photo-f31477217-500.jpg",
+    "photo-f31477217-960.jpg",
+    "photo-f31477217.jpg"
+   ],
+   "id": "f31477217",
+   "alt": "DentalResearch 012",
+   "by": "National Institute of Standards and Technology",
+   "licence": "Public domain",
+   "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:DentalResearch_012.jpg",
+   "source": "Wikimedia Commons"
+  }
+ ]
+}

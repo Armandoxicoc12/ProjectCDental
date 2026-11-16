@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Clínica by Dra. Any & Dra. Karla · Odontología en San Martín Texmelucan</title>
+  <meta name="description" content="Ortodoncia, implantes, cirugía oral, blanqueamientos y más, con escaneo oral e impresión 3D en San Martín Texmelucan. Contacta por WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Clínica by Dra. Any & Dra. Karla">
+  <meta property="og:description" content="Odontología, ortodoncia e implantes con tecnología digital en San Martín Texmelucan.">
+  <meta property="og:image" content="assets/img/photo-f102866603.jpg">
+  <meta name="theme-color" content="#0e7a80">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;500;600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5f8f6;
+      --surface: #eef3f1;
+      --ink: #21343a;
+      --ink-soft: #4b6268;
+      --ink-faint: #6d8287;
+      --brand: #0e7a80;
+      --brand-deep: #0a5f66;
+      --brand-soft: #d7ecea;
+      --mint: #cdeee8;
+      --coral: #e8593f;
+      --coral-deep: #cf452e;
+      --lime: #d8e63c;
+      --line: rgba(33, 52, 58, .14);
+      --font-display: "Literata", Georgia, serif;
+      --font-text: "Figtree", system-ui, sans-serif;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      color-scheme: light;
+      accent-color: var(--brand);
+      scrollbar-color: var(--brand) var(--surface);
+      --shadow-sm: 0 1px 2px rgba(33,52,58,.06), 0 6px 16px -8px rgba(33,52,58,.18);
+      --shadow-md: 0 2px 6px rgba(33,52,58,.07), 0 18px 42px -16px rgba(33,52,58,.28);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: var(--font-text); font-size: 16.5px; line-height: 1.6;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    img, video, svg { display: block; max-width: 100%; }
+    ::selection { background: var(--lime); color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; border-radius: 4px; }
+    h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; line-height: 1.06; letter-spacing: -.025em; color: var(--ink); text-wrap: balance; }
+    p { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+
+    .skip-link { position: fixed; z-index: 200; left: 16px; top: 12px; transform: translateY(-220%); padding: 12px 18px; background: var(--ink); color: #fff; border-radius: 10px; font-weight: 600; transition: transform .2s var(--ease); }
+    .skip-link:focus { transform: translateY(0); }
+
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+
+    /* ---- Nav ---- */
+    .nav { position: sticky; z-index: 60; top: 0; background: rgba(245, 248, 246, .92); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
+    .nav__bar { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; }
+    .brand__mark { position: relative; width: 44px; height: 44px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 13px; background: linear-gradient(135deg, #12a3ab, #0a5f66); color: #fff; box-shadow: 0 6px 16px -6px rgba(10,95,102,.55); transition: transform .24s var(--ease); }
+    .brand__mark svg { width: 26px; height: 26px; }
+    .brand__mark::after { content: ""; position: absolute; right: -3px; top: -3px; width: 12px; height: 12px; border-radius: 50%; background: var(--coral); border: 2px solid var(--paper); }
+    .brand:hover .brand__mark { transform: rotate(-6deg) scale(1.05); }
+    .brand__lockup { display: flex; flex-direction: column; line-height: 1.08; }
+    .brand__name { font: 700 22px/1 var(--font-text); letter-spacing: -.02em; color: var(--ink); }
+    .brand__dot { color: var(--coral); }
+    .brand__sub { margin-top: 4px; font-size: 11px; font-weight: 600; letter-spacing: .055em; text-transform: uppercase; color: var(--brand); }
+    .nav__links { display: flex; align-items: center; gap: 30px; }
+    .nav__link { position: relative; font-size: 15px; font-weight: 500; color: var(--ink-soft); padding: 6px 0; }
+    .nav__link::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 2px; border-radius: 2px; background: var(--brand); transition: right .22s var(--ease); }
+    .nav__link:hover::after { right: 0; }
+    .nav__cta { display: flex; align-items: center; gap: 12px; }
+    .nav__toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); cursor: pointer; align-items: center; justify-content: center; }
+
+    /* ---- Buttons ---- */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 50px; padding: 0 22px; border: 1px solid transparent; border-radius: 14px; background: var(--brand); color: #fff; font: 600 15px/1 var(--font-text); cursor: pointer; transition: transform .16s var(--ease), background-color .18s ease, box-shadow .18s ease; }
+    .btn svg { width: 19px; height: 19px; flex: 0 0 auto; }
+    .btn:hover { transform: translateY(-2px); background: var(--brand-deep); box-shadow: var(--shadow-md); }
+    .btn:active { transform: scale(.98); }
+    .btn--coral { background: var(--coral); }
+    .btn--coral:hover { background: var(--coral-deep); }
+    .btn--ghost { background: #fff; color: var(--ink); border-color: var(--line); }
+    .btn--ghost:hover { background: var(--brand-soft); border-color: transparent; box-shadow: none; }
+
+    /* ---- Hero ---- */
+    .hero { position: relative; overflow: clip; padding: 64px 0 84px; }
+    .hero__grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); gap: clamp(40px, 6vw, 88px); align-items: center; }
+    .hero__brand { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+    .hero__brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--coral); flex: 0 0 auto; }
+    .hero__brand span { font-size: 13.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--brand); }
+    .hero h1 { font-size: clamp(42px, 5.6vw, 70px); letter-spacing: -.03em; }
+    .hero h1 em { font-style: normal; color: var(--brand); }
+    .hero__lead { margin-top: 22px; max-width: 52ch; font-size: clamp(17px, 1.35vw, 20px); color: var(--ink-soft); }
+    .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero__facts { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 30px; }
+    .hero__fact { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-faint); }
+    .hero__fact svg { width: 16px; height: 16px; color: var(--brand); }
+
+    .hero__visual { position: relative; }
+    .hero__visual-card { position: relative; border-radius: 22px; overflow: hidden; background: var(--ink); box-shadow: var(--shadow-md); }
+    .hero__visual-img { width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: cover; }
+    .hero__visual-caption { position: absolute; left: 18px; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #fff; }
+    .hero__visual-caption strong { font: 600 15px/1.3 var(--font-text); }
+    .hero__visual-caption span { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,.16); backdrop-filter: blur(4px); }
+    .hero__visual-chip { position: absolute; top: 16px; right: 16px; font-size: 12.5px; font-weight: 600; padding: 7px 12px; border-radius: 999px; background: var(--lime); color: var(--ink); }
+
+    /* ---- Section base ---- */
+    .section { padding: 88px 0; }
+    .section--tint { background: var(--surface); }
+    .section--ink { background: var(--ink); color: #eaf3f1; }
+    .section--ink h2, .section--ink h3 { color: #fff; }
+    .section__head { max-width: 720px; margin-bottom: 46px; }
+    .section__head h2 { font-size: clamp(34px, 4.4vw, 54px); }
+    .section__head p { margin-top: 16px; font-size: 17px; color: var(--ink-soft); }
+    .section--ink .section__head p { color: #bcd0cd; }
+
+    /* ---- Services filter ---- */
+    .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 34px; }
+    .filter { min-height: 42px; padding: 0 18px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink-soft); font: 600 14px/1 var(--font-text); cursor: pointer; transition: all .18s var(--ease); }
+    .filter:hover { border-color: var(--brand); color: var(--brand); }
+    .filter.is-active { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+    .services { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .service { grid-column: span 4; position: relative; display: flex; flex-direction: column; gap: 12px; padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: #fff; transition: transform .2s var(--ease), box-shadow .22s ease, border-color .2s ease; }
+    .service:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
+    .service.is-hidden { display: none; }
+    .service__icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 13px; background: var(--brand-soft); color: var(--brand-deep); }
+    .service__icon svg { width: 24px; height: 24px; }
+    .service h3 { font-size: 21px; }
+    .service p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; }
+    .service__link { margin-top: auto; display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; color: var(--brand); }
+    .service__link svg { width: 15px; height: 15px; transition: transform .18s var(--ease); }
+    .service:hover .service__link svg { transform: translateX(3px); }
+    .service--feature { grid-column: span 6; background: var(--ink); color: #eaf3f1; border-color: transparent; }
+    .service--feature h3 { color: #fff; }
+    .service--feature p { color: #bcd0cd; }
+    .service--feature .service__icon { background: rgba(255,255,255,.12); color: var(--lime); }
+    .service--feature .service__link { color: var(--lime); }
+
+    /* ---- Technology ---- */
+    .tech { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(36px, 6vw, 80px); align-items: center; }
+    .tech__list { display: grid; gap: 22px; margin-top: 32px; }
+    .tech__item { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: start; }
+    .tech__item .num { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: rgba(255,255,255,.1); color: var(--lime); font: 600 17px/1 var(--font-text); }
+    .tech__item h3 { font-size: 20px; }
+    .tech__item p { margin-top: 6px; font-size: 15px; color: #bcd0cd; }
+    .tech__visual { border-radius: 20px; overflow: hidden; background: #0d2329; box-shadow: var(--shadow-md); }
+    .tech__visual img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+    /* ---- Clinic gallery ---- */
+    .gallery { display: grid; grid-template-columns: 1.1fr .72fr 1fr; gap: 18px; align-items: stretch; }
+    .gallery__item { position: relative; margin: 0; border-radius: 18px; overflow: hidden; background: var(--surface); }
+    .gallery__item img, .gallery__item video { width: 100%; height: 100%; object-fit: cover; }
+    .gallery__item--tall { aspect-ratio: 3 / 3.6; }
+    .gallery__item--square { aspect-ratio: 1; }
+    .gallery__item--video { background: #0d2329; display: grid; place-items: center; }
+    .gallery__item--video video { aspect-ratio: 9 / 14; object-fit: contain; max-height: 460px; }
+    .gallery__cap { position: absolute; left: 14px; bottom: 14px; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,.9); font-size: 12.5px; font-weight: 600; color: var(--ink); }
+
+    /* ---- Location / contact ---- */
+    .contact-grid { display: grid; grid-template-columns: 1fr .9fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
+    .contact__rows { display: grid; gap: 0; margin-top: 30px; }
+    .contact__row { display: grid; grid-template-columns: 34px 1fr; gap: 14px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.14); }
+    .contact__row svg { width: 20px; height: 20px; color: var(--lime); }
+    .contact__row .k { font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: #8fb3ad; }
+    .contact__row .v { margin-top: 5px; font-size: 16.5px; color: #eaf3f1; }
+    .contact__row .v a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .contact__cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .map-card { position: relative; border-radius: 20px; overflow: hidden; background: #0d2329; border: 1px solid rgba(255,255,255,.12); }
+    .map-card__img { width: 100%; aspect-ratio: 16 / 12; object-fit: cover; opacity: .9; }
+    .map-card__overlay { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 20px; }
+    .map-card__overlay a { display: inline-flex; align-items: center; gap: 9px; padding: 12px 18px; border-radius: 13px; background: #fff; color: var(--ink); font-weight: 600; font-size: 14px; box-shadow: var(--shadow-md); }
+    .map-card__overlay a:hover { background: var(--lime); }
+
+    /* ---- Closing CTA ---- */
+    .closing { background: var(--lime); padding: 76px 0; }
+    .closing__inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .closing h2 { font-size: clamp(34px, 4.6vw, 52px); color: var(--ink); }
+    .closing p { margin-top: 12px; max-width: 44ch; color: #414d2e; font-size: 16px; }
+    .closing .btn { background: var(--ink); color: #fff; flex: 0 0 auto; }
+    .closing .btn:hover { background: #0d2329; }
+
+    /* ---- Footer ---- */
+    .footer { background: var(--paper); padding: 56px 0 24px; border-top: 1px solid var(--line); }
+    .footer__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px; padding-bottom: 42px; }
+    .footer__brand .brand { margin-bottom: 16px; }
+    .footer__brand p { font-size: 14px; color: var(--ink-soft); max-width: 30ch; }
+    .footer__col h4 { font-size: 13px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 14px; font-family: var(--font-text); }
+    .footer__col a { display: block; font-size: 14.5px; color: var(--ink-soft); padding: 4px 0; }
+    .footer__col a:hover { color: var(--brand); }
+    .footer__legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; border-top: 1px solid var(--line); padding-top: 18px; font-size: 13px; color: var(--ink-faint); }
+    .footer__legal a { color: var(--ink-faint); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ---- Floating WhatsApp ---- */
+    .float-wa { position: fixed; z-index: 80; right: 20px; bottom: 20px; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: #25d366; color: #fff; box-shadow: 0 10px 28px -8px rgba(18, 140, 66, .6); transition: transform .18s var(--ease); }
+    .float-wa:hover { transform: scale(1.07); }
+    .float-wa svg { width: 28px; height: 28px; }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 960px) {
+      .hero__grid { grid-template-columns: 1fr; }
+      .hero { padding: 48px 0 68px; }
+      .services .service { grid-column: span 6; }
+      .services .service--feature { grid-column: span 6; }
+      .tech { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .gallery__item--video { grid-column: 1 / -1; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer__top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      body { font-size: 16px; }
+      .wrap { width: calc(100% - 40px); }
+      .nav__links { position: absolute; top: 100%; left: 0; right: 0; display: grid; gap: 0; padding: 8px 20px 18px; background: var(--paper); border-bottom: 1px solid var(--line); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity .18s ease, transform .2s var(--ease), visibility .2s; }
+      .nav.is-open .nav__links { opacity: 1; visibility: visible; transform: none; }
+      .nav__link { padding: 14px 0; border-bottom: 1px solid var(--line); }
+      .nav__link::after { display: none; }
+      .nav__cta .btn { display: none; }
+      .nav__toggle { display: inline-flex; }
+      .brand__mark { width: 40px; height: 40px; border-radius: 12px; }
+      .brand__name { font-size: 19px; }
+      .brand__sub { font-size: 10px; letter-spacing: .05em; }
+      .hero h1 { font-size: clamp(38px, 10.5vw, 50px); }
+      .hero__actions .btn { width: 100%; }
+      .services .service, .services .service--feature { grid-column: 1 / -1; }
+      .filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; }
+      .filter { flex: 0 0 auto; }
+      .gallery { grid-template-columns: 1fr; }
+      .gallery__item--video { grid-column: auto; }
+      .closing__inner { flex-direction: column; align-items: flex-start; }
+      .closing .btn { width: 100%; }
+      .footer__top { grid-template-columns: 1fr; gap: 26px; }
+      .float-wa { right: 14px; bottom: 14px; width: 54px; height: 54px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="i-tooth" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3.8C9 3.8 6.6 6.4 6.6 9.4c0 2.3.9 6 2.3 8.3.8 1.3 1.7 2.3 3.1 2.3s2.3-1 3.1-2.3c1.4-2.3 2.3-6 2.3-8.3 0-3-2.4-5.6-5.4-5.6Z"/>
+        <path d="M8 9.2c0 1.4.5 2.6 1.4 3.4M16 9.2c0 1.4-.5 2.6-1.4 3.4"/>
+      </g>
+      <g id="i-braces">
+        <use href="#i-tooth"/>
+        <rect x="8.4" y="8.6" width="7.2" height="4.2" rx="1.1"/>
+        <path d="M8.4 10.7H6.2M15.6 10.7h2.2"/>
+      </g>
+      <g id="i-jaw" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 8c0 0 .8 10 8 10s8-10 8-10"/>
+        <path d="M7.4 9.4 6 15.5M12 8.6V16.5M16.6 9.4l1.4 6.1"/>
+      </g>
+      <g id="i-extract">
+        <use href="#i-tooth"/>
+        <path d="M12 3.8V1.6M9.4 2.7 12 1.6l2.6 1.1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <g id="i-face" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5.5 20.5c0-6 2.8-9.5 6.5-9.5s6.5 3.5 6.5 9.5"/>
+        <path d="M7 11c1.4-1.6 3-2.4 5-2.4s3.6.8 5 2.4"/>
+        <circle cx="15.6" cy="9" r=".4"/>
+        <circle cx="8.4" cy="9" r=".4"/>
+      </g>
+      <g id="i-implant" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8.2 6.4c0-2 1.7-3.4 3.8-3.4s3.8 1.4 3.8 3.4c0 1-.2 2-.7 2.9l-2 4.2c-.4.9-1.7.9-2.1 0L9 9.3c-.5-.9-.8-1.9-.8-2.9Z"/>
+        <path d="M12 10.2V21M8.8 12h6.4M8.8 15h6.4M8.8 18h6.4"/>
+      </g>
+      <g id="i-denture" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 11c0 0 1-7 8-7s8 7 8 7c0 3-1.4 5.5-3 5.5S15 15 12 15s-4.5 1.5-5 1.5-3-2.5-3-5.5Z"/>
+        <path d="M7.2 10.5v2.5M12 9.2v3.8M16.8 10.5v2.5"/>
+      </g>
+      <g id="i-spark" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4v2M12 18v2M5 12h2M17 12h2M6.5 6.5 8 8M16 16l1.5 1.5M17.5 6.5 16 8M8 16l-1.5 1.5"/>
+      </g>
+      <g id="i-heart" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 20s-6.6-4.2-6.6-9.2C5.4 8 7.4 6.2 9.5 6.2c1.3 0 2.5.7 2.5 2.1 0-1.4 1.2-2.1 2.5-2.1 2.1 0 4.1 1.8 4.1 4.6C18.6 15.8 12 20 12 20Z"/>
+      </g>
+      <g id="i-scan" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <use href="#i-tooth"/>
+        <path d="M3.5 9V4.5H8M20.5 9V4.5H16M3.5 15v4.5H8M20.5 15v4.5H16M4 12h16"/>
+      </g>
+      <g id="i-cube" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3 20 7.5 12 12 4 7.5Z"/>
+        <path d="M4 7.5V16.5L12 21l8-4.5V7.5M12 12v9"/>
+        <path d="M4.8 9.8 12 12l7.2-2.2"/>
+      </g>
+      <g id="i-wa" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+      </g>
+      <g id="i-pin" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21s7-6.2 7-11.2c0-3.9-3.1-6.8-7-6.8S5 5.9 5 9.8C5 14.8 12 21 12 21Z"/>
+        <circle cx="12" cy="9.6" r="2.4"/>
+      </g>
+      <g id="i-phone" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6.5 3.5h2l1.5 4-1.8 1.3a12.5 12.5 0 0 0 5 5l1.3-1.8 4 1.5v2c0 1.1-.9 2-2 2C9.6 17.5 6.5 14.4 6.5 7.5c0-1.1.9-2 2-2Z"/>
+      </g>
+      <g id="i-instagram" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="4.5"/>
+        <circle cx="12" cy="12" r="3.6"/>
+        <circle cx="16.8" cy="7.2" r=".7" fill="currentColor" stroke="none"/>
+      </g>
+      <g id="i-arrow" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 12h15M13 6l6 6-6 6"/>
+      </g>
+      <g id="i-clock" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="8.5"/>
+        <path d="M12 7v5l3.4 2"/>
+      </g>
+    </defs>
+  </svg>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav__bar">
+      <a class="brand" href="#inicio" aria-label="ODONTO. Dra Karla — ir al inicio">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-tooth"/></svg></span>
+        <span class="brand__lockup">
+          <span class="brand__name">ODONTO<span class="brand__dot">.</span></span>
+          <span class="brand__sub">Dra. Any &amp; Dra. Karla</span>
+        </span>
+      </a>
+      <nav class="nav__links" id="nav-links" aria-label="Navegación principal">
+        <a class="nav__link" href="#servicios">Servicios</a>
+        <a class="nav__link" href="#tecnologia">Tecnología</a>
+        <a class="nav__link" href="#clinica">La clínica</a>
+        <a class="nav__link" href="#ubicacion">Ubicación</a>
+      </nav>
+      <div class="nav__cta">
+        <a class="btn" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+        <button class="nav__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <div class="hero__brand"><span class="dot" aria-hidden="true"></span><span>Clínica by Dra. Any &amp; Dra. Karla</span></div>
+          <h1>Odontología, ortodoncia e implantes en <em>San Martín Texmelucan</em></h1>
+          <p class="hero__lead">Escaneo oral, impresión 3D y un plan para cada sonrisa. Escríbenos por WhatsApp y te orientamos sobre el tratamiento que necesitas.</p>
+          <div class="hero__actions">
+            <a class="btn btn--coral" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Contactar por WhatsApp</a>
+            <a class="btn btn--ghost" href="#servicios">Ver servicios<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="hero__facts">
+            <span class="hero__fact"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>Blvd. Xicoténcatl 9, interior 6 · Col. Centro</span>
+            <span class="hero__fact"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg>Atención por WhatsApp</span>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__visual-card">
+            <span class="hero__visual-chip">Tecnología de punta</span>
+            <img class="hero__visual-img" src="assets/img/photo-f102866603.jpg" srcset="assets/img/photo-f102866603-500.jpg 500w, assets/img/photo-f102866603-960.jpg 960w, assets/img/photo-f102866603.jpg 1280w" sizes="(max-width: 960px) 100vw, 50vw" width="1280" height="880" alt="Radiografía panorámica dental" loading="eager" decoding="async">
+            <div class="hero__visual-caption"><strong>Diagnóstico digital</strong><span>Escaneo oral · Impresión 3D</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="servicios" aria-labelledby="servicios-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="servicios-title">Servicios dentales</h2>
+          <p>De la limpieza a la ortodoncia y la cirugía oral: una clínica para toda la familia. Elige una categoría o pregunta por el estudio que necesitas.</p>
+        </div>
+        <div class="filters" id="filters" role="tablist" aria-label="Categorías de servicios">
+          <button class="filter is-active" data-filter="todos" type="button">Todos</button>
+          <button class="filter" data-filter="ortodoncia" type="button">Ortodoncia</button>
+          <button class="filter" data-filter="cirugia" type="button">Cirugía oral</button>
+          <button class="filter" data-filter="implantes" type="button">Implantes y prótesis</button>
+          <button class="filter" data-filter="estetica" type="button">Estética y prevención</button>
+          <button class="filter" data-filter="ninos" type="button">Niños</button>
+          <button class="filter" data-filter="diagnostico" type="button">Diagnóstico digital</button>
+        </div>
+        <div class="services" id="services">
+          <article class="service service--feature" data-cat="ortodoncia">
+            <div class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-braces"/></svg></div>
+            <h3>Ortodoncia</h3>
+            <p>Corrección de la posición de los dientes para una mordida y una sonrisa armónicas. Pregunta por el plan más adecuado para tu caso.</p>
+            <a class="service__link" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer">Consultar<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="service" data-cat="ortodoncia">
+            <div class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-jaw"/></svg></div>
+            <h3>Ortodoncia maxilar</h3>
+            <p>Tratamiento de la estructura y el crecimiento de los maxilares, en niños y adultos.</p>
+            <a class="service__link" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer">Consultar<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="service" data-cat="cirugia">
+            <div class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-extract"/></svg></div>
+            <h3>Muelas del juicio</h3>
+            <p>Extracción de terceros molares con seguimiento en consultorio.</p>
+            <a class="service__link" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer">Consultar<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="service" data-cat="cirugia">
+            <div class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-face"/></svg></div>
+            <h3>Bichectomías</h3>
+            <p>Reducción estética de mejillas. Consulta si es una opción para ti.</p>
+            <a class="service__link" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer">Consultar<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="service" data-cat="implantes">
+            <div class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-implant"/></svg></div>
+            <h3>Implantes dentales</h3>
+            <p>Sustitución de dientes perdidos para recuperar la función y la estética.</p>
+            <a class="service__link" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer">Consultar<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="service" data-cat="implantes">
+            <div class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-denture"/></svg></div>
+            <h3>Prótesis</h3>
+            <p>Prótesis dentales para rehabilitar la sonrisa y la masticación.</p>
+            <a class="service__link" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer">Consultar<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="service" data-cat="estetica">
+            <div class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"/></svg></div>
+            <h3>Blanqueamientos</h3>
+            <p>Aclarado del color de los dientes para una sonrisa más luminosa.</p>
+            <a class="service__link" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer">Consultar<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="service" data-cat="estetica">
+            <div class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tooth"/></svg></div>
+            <h3>Profilaxis</h3>
+            <p>Limpieza dental profesional para mantener encías y dientes sanos.</p>
+            <a class="service__link" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer">Consultar<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="service" data-cat="ninos">
+            <div class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-heart"/></svg></div>
+            <h3>Tratamiento para niños</h3>
+            <p>Odontología pediátrica en un ambiente amable, pensada para los más pequeños.</p>
+            <a class="service__link" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer">Consultar<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="service service--feature" data-cat="diagnostico">
+            <div class="service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scan"/></svg></div>
+            <h3>Escaneo oral</h3>
+            <p>Modelos digitales de tu boca con escáner intraoral, para un diagnóstico preciso y cómodo.</p>
+            <a class="service__link" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer">Consultar<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section class="section section--ink" id="tecnologia" aria-labelledby="tecnologia-title">
+      <div class="wrap tech">
+        <div>
+          <div class="section__head" style="margin-bottom:0">
+            <h2 id="tecnologia-title">Tecnología de punta</h2>
+            <p>Herramientas digitales que hacen el diagnóstico más preciso y el tratamiento más cómodo.</p>
+          </div>
+          <div class="tech__list">
+            <div class="tech__item">
+              <span class="num">01</span>
+              <div><h3>Escaneo oral</h3><p>Capturamos un modelo digital de tu boca en minutos, sin impresiones tradicionales.</p></div>
+            </div>
+            <div class="tech__item">
+              <span class="num">02</span>
+              <div><h3>Impresión 3D</h3><p>Fabricamos guías, modelos y piezas con impresión 3D para tratamientos más exactos.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="tech__visual">
+          <img src="assets/img/photo-f102866603.jpg" alt="Estudio radiográfico digital" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- CLINIC -->
+    <section class="section" id="clinica" aria-labelledby="clinica-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="clinica-title">Un vistazo a la clínica</h2>
+          <p>Un espacio pensado para que te sientas cómodo y en buenas manos.</p>
+        </div>
+        <div class="gallery">
+          <figure class="gallery__item gallery__item--tall">
+            <img src="assets/img/dra-any-consultorio.jpg" width="1440" height="1680" alt="Doctora en el consultorio junto al equipo dental" loading="lazy" decoding="async">
+            <figcaption class="gallery__cap">El consultorio</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--video">
+            <video controls playsinline preload="metadata" poster="assets/img/clinic-preview-poster.jpg" aria-label="Video de la atención dental en el consultorio">
+              <source src="assets/img/clinic-preview.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video.
+            </video>
+          </figure>
+          <figure class="gallery__item gallery__item--square">
+            <img src="assets/img/odonto-dra-karla-original.jpg" width="1170" height="840" alt="Letrero de ODONTO. Dra Karla" loading="lazy" decoding="async">
+            <figcaption class="gallery__cap">ODONTO. Dra Karla</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION / CONTACT -->
+    <section class="section section--ink" id="ubicacion" aria-labelledby="ubicacion-title">
+      <div class="wrap contact-grid">
+        <div>
+          <h2 id="ubicacion-title">Estamos en San Martín Texmelucan</h2>
+          <div class="contact__rows">
+            <div class="contact__row">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>
+              <div><span class="k">Dirección</span><p class="v"><a href="https://www.google.com/maps/search/?api=1&amp;query=Blvd.%20Xicot%C3%A9ncatl%209%2C%20Col.%20Centro%2C%2074000%20San%20Mart%C3%ADn%20Texmelucan%20de%20Labastida%2C%20Puebla" target="_blank" rel="noopener noreferrer">Blvd. Xicoténcatl 9, interior 6<br>Col. Centro, 74000<br>San Martín Texmelucan de Labastida, Pue.</a></p></div>
+            </div>
+            <div class="contact__row">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+              <div><span class="k">Teléfono y WhatsApp</span><p class="v"><a href="tel:+522221649653">+52 222 164 9653</a></p></div>
+            </div>
+            <div class="contact__row">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"/></svg>
+              <div><span class="k">Instagram</span><p class="v"><a href="https://www.instagram.com/odonto.drakarla/" target="_blank" rel="noopener noreferrer">@odonto.drakarla</a></p></div>
+            </div>
+          </div>
+          <div class="contact__cta">
+            <a class="btn btn--coral" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Contactar por WhatsApp</a>
+            <a class="btn btn--ghost" href="tel:+522221649653"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>Llamar</a>
+          </div>
+        </div>
+        <div class="map-card">
+          <img class="map-card__img" src="assets/img/odonto-dra-karla-original.jpg" alt="Fachada del consultorio ODONTO. Dra Karla" loading="lazy" decoding="async">
+          <div class="map-card__overlay">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Blvd.%20Xicot%C3%A9ncatl%209%2C%20Col.%20Centro%2C%2074000%20San%20Mart%C3%ADn%20Texmelucan%20de%20Labastida%2C%20Puebla" target="_blank" rel="noopener noreferrer">Abrir en el mapa<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="closing" id="contacto">
+      <div class="wrap closing__inner">
+        <div>
+          <h2>Hablemos de tu sonrisa</h2>
+          <p>Escoge un servicio y escríbenos por WhatsApp. Te orientamos sin compromiso.</p>
+        </div>
+        <a class="btn" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Contactar por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="brand" href="#inicio" aria-label="ODONTO. Dra Karla — ir al inicio">
+            <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-tooth"/></svg></span>
+            <span class="brand__lockup">
+              <span class="brand__name">ODONTO<span class="brand__dot">.</span></span>
+              <span class="brand__sub">Dra. Any &amp; Dra. Karla</span>
+            </span>
+          </a>
+          <p>Odontología, ortodoncia e implantes con tecnología digital en San Martín Texmelucan.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Servicios</h4>
+          <a href="#servicios">Ortodoncia</a>
+          <a href="#servicios">Cirugía oral</a>
+          <a href="#servicios">Implantes y prótesis</a>
+          <a href="#servicios">Blanqueamientos</a>
+        </div>
+        <div class="footer__col">
+          <h4>Clínica</h4>
+          <a href="#tecnologia">Tecnología</a>
+          <a href="#clinica">La clínica</a>
+          <a href="#ubicacion">Ubicación</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contacto</h4>
+          <a href="tel:+522221649653">+52 222 164 9653</a>
+          <a href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://www.instagram.com/odonto.drakarla/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <span>© <span id="year">2026</span> Clínica by Dra. Any &amp; Dra. Karla</span>
+        <a href="credits.html">Créditos de las imágenes</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="float-wa" href="https://wa.me/message/R2U7GOHEU6VOJ1" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+
+  <script>
+    (() => {
+      const $ = (s, c = document) => c.querySelector(s);
+      const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+
+      // Year
+      const year = $('#year');
+      if (year) year.textContent = String(new Date().getFullYear());
+
+      // Mobile nav
+      const nav = $('#nav');
+      const toggle = $('#nav-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+        $$('#nav-links a').forEach(a => a.addEventListener('click', () => {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }));
+      }
+
+      // Service filter
+      const filters = $$('#filters .filter');
+      const services = $$('#services .service');
+      filters.forEach(f => f.addEventListener('click', () => {
+        filters.forEach(x => x.classList.remove('is-active'));
+        f.classList.add('is-active');
+        const cat = f.dataset.filter;
+        services.forEach(s => {
+          const show = cat === 'todos' || s.dataset.cat === cat;
+          s.classList.toggle('is-hidden', !show);
+        });
+      }));
+
+    })();
+  </script>
+</body>
+</html>
